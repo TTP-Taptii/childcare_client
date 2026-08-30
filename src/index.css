@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #1c2430;
+}
+
+h1, h2, h3, .font-display {
+  font-family: 'Fraunces', serif;
+}
+
+/* Keep focus rings visible for keyboard users */
+:focus-visible {
+  outline: 2px solid #e8873a;
+  outline-offset: 2px;
+}
