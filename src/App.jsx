@@ -5,6 +5,9 @@ import Dashboard from "./pages/Dashboard";
 import ProfileRouter from "./pages/ProfileRouter";
 import Wallet from "./pages/Wallet";
 import Children from "./pages/Children";
+import Bookings from "./pages/Bookings";
+import Waitlist from "./pages/Waitlist";
+import Ratings from "./pages/Ratings";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 export default function App() {
@@ -29,6 +32,7 @@ export default function App() {
           </ProtectedRoute>
         }
       />
+
       <Route
         path="/wallet"
         element={
@@ -37,6 +41,7 @@ export default function App() {
           </ProtectedRoute>
         }
       />
+
       <Route
         path="/children"
         element={
@@ -45,6 +50,34 @@ export default function App() {
           </ProtectedRoute>
         }
       />
+
+      <Route
+        path="/bookings"
+        element={
+          <ProtectedRoute>
+            <Bookings />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/waitlist"
+        element={
+          <ProtectedRoute>
+            <Waitlist />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/ratings"
+        element={
+          <ProtectedRoute allowedRoles={["guardian", "sitter", "admin"]}>
+            <Ratings />
+          </ProtectedRoute>
+        }
+      />
+
       <Route path="*" element={<Navigate to="/login" replace />} />
     </Routes>
   );
