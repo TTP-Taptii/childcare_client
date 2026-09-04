@@ -5,8 +5,13 @@ import Dashboard from "./pages/Dashboard";
 import ProfileRouter from "./pages/ProfileRouter";
 import Wallet from "./pages/Wallet";
 import Children from "./pages/Children";
+import Sitters from "./pages/Sitters";
+import Availability from "./pages/Availability";
+import Rooms from "./pages/Rooms";
 import Bookings from "./pages/Bookings";
 import Waitlist from "./pages/Waitlist";
+import Attendance from "./pages/Attendance";
+import Transport from "./pages/Transport";
 import Ratings from "./pages/Ratings";
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -24,6 +29,7 @@ export default function App() {
           </ProtectedRoute>
         }
       />
+
       <Route
         path="/profile"
         element={
@@ -52,6 +58,33 @@ export default function App() {
       />
 
       <Route
+        path="/sitters"
+        element={
+          <ProtectedRoute>
+            <Sitters />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/availability"
+        element={
+          <ProtectedRoute allowedRoles={["sitter"]}>
+            <Availability />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/rooms"
+        element={
+          <ProtectedRoute>
+            <Rooms />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
         path="/bookings"
         element={
           <ProtectedRoute>
@@ -65,6 +98,24 @@ export default function App() {
         element={
           <ProtectedRoute>
             <Waitlist />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/attendance"
+        element={
+          <ProtectedRoute allowedRoles={["sitter"]}>
+            <Attendance />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/transport"
+        element={
+          <ProtectedRoute>
+            <Transport />
           </ProtectedRoute>
         }
       />

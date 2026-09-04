@@ -1,6 +1,6 @@
 import { useAuth } from '../context/AuthContext';
 import GuardianProfile from './GuardianProfile';
-// import SitterProfile from './SitterProfile';
+import SitterProfile from './SitterProfile';
 import PageShell from '../components/PageShell';
 
 // Shared infrastructure, not owned by either person — just picks which
